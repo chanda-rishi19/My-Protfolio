@@ -538,7 +538,7 @@
     <p class="hero-tagline">Building intelligent systems that bridge the gap between data and real-world impact.</p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact"  class="btn btn-ghost">Get in Touch</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=chrishi23030@gmail.com&su=Portfolio%20Inquiry%20%E2%80%94%20Let%27s%20Connect&body=Hi%20Chanda%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect.%0A%0A" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" onclick="openGmail(event, this.href)">Get in Touch</a>
     </div>
   </div>
 
@@ -748,10 +748,10 @@
 <section id="contact">
   <div class="section-label reveal" style="margin-bottom:1rem;">06 — Contact</div>
   <p class="contact-sub reveal reveal-delay-1">Let's Work Together</p>
-  <a class="contact-email reveal reveal-delay-2" href="mailto:chrishi23030@gmail.com">chrishi23030@gmail.com</a>
+  <a class="contact-email reveal reveal-delay-2" href="https://mail.google.com/mail/?view=cm&fs=1&to=chrishi23030@gmail.com&su=Portfolio%20Inquiry%20%E2%80%94%20Let%27s%20Connect&body=Hi%20Chanda%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect.%0A%0A" target="_blank" rel="noopener noreferrer" onclick="openGmail(event, this.href)">chrishi23030@gmail.com</a>
   <div class="contact-links reveal reveal-delay-3">
     <a href="tel:+919494399457">+91 9494399457</a>
-    <a href="mailto:chrishi23030@gmail.com">Email</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=chrishi23030@gmail.com&su=Portfolio%20Inquiry%20%E2%80%94%20Let%27s%20Connect&body=Hi%20Chanda%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect.%0A%0A" target="_blank" rel="noopener noreferrer" onclick="openGmail(event, this.href)">Email</a>
     <a href="#">LinkedIn</a>
     <a href="#">GitHub</a>
   </div>
@@ -936,6 +936,21 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 reveals.forEach(el => revealObserver.observe(el));
+
+
+/* ═══════════════════════════════════════
+   GMAIL COMPOSE — open with fallback
+   Tries Gmail web first; if user is not
+   logged in the tab still lands on Gmail.
+═══════════════════════════════════════ */
+function openGmail(e, gmailUrl) {
+  e.preventDefault();
+  const win = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+  /* If pop-up was blocked, fall back to direct navigation */
+  if (!win || win.closed || typeof win.closed === 'undefined') {
+    window.location.href = gmailUrl;
+  }
+}
 </script>
 
 </body>
